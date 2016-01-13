@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TestView.h
 //  Test
 //
 //  Created by yi on 16/1/9.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TestView : UIView
 
 @end
-
