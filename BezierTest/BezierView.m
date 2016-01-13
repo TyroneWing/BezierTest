@@ -25,7 +25,7 @@
     if (self)
     {
         self.backgroundColor = [UIColor grayColor];
-        controlPoint = CGPointMake(70, 50);
+        controlPoint = CGPointMake((self.bounds.size.width-20)/2, 50);
     }
     return self;
 }
@@ -58,7 +58,7 @@
     }
     [aPath2 removeAllPoints];
     [aPath2 moveToPoint:CGPointMake(20, 50)];
-    [aPath2 addQuadCurveToPoint:CGPointMake(120, 50) controlPoint:controlPoint];
+    [aPath2 addQuadCurveToPoint:CGPointMake(self.bounds.size.width-20, 50) controlPoint:controlPoint];
     [aPath2 stroke];
     NSLog(@"CGPointMake(x, y) = %@",NSStringFromCGPoint(controlPoint));
 }
@@ -70,7 +70,7 @@
     
     NSLog(@"translationInView %@",NSStringFromCGPoint(pt));
     
-    controlPoint = CGPointMake(pt.x+70, pt.y+50);
+    controlPoint = CGPointMake(pt.x+(self.bounds.size.width-20)/2, pt.y+50);
     [self setNeedsDisplay];
     
     CGPoint velocity = [pan1 velocityInView:self];
@@ -79,7 +79,7 @@
     //手势停止
     if (pan1.state == UIGestureRecognizerStateEnded) {
 
-        controlPoint = CGPointMake(70, 50);
+        controlPoint = CGPointMake((self.bounds.size.width-20)/2, 50);
         [self setNeedsDisplay];
     }
 
